@@ -1,0 +1,19 @@
+@font-face {
+  font-family: 'Consolas NF';
+  src: url('/src/assets/fonts/ConsolasNerdFontCM-.woff2') format('woff2'),
+      url('/src/assets/fonts/ConsolasNerdFontCM-.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+%consolas {
+  font-family: 'Consolas NF';
+}
+
+@import url('https://fonts.googleapis.com/css?family=Eczar:600');
+
+
+%eczar {
+  font-family: 'Eczar', serif;
+  font-weight: 600;
+}

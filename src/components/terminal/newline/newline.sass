@@ -1,0 +1,63 @@
+@import '../../../assets/sass/_component_includes'
+
+.newline
+  position: relative
+  &.git
+    $_offset: 150px
+    input[type="text"]
+      margin-left: $_offset
+    i
+      left: $_offset + 1
+    .prefix__text
+      color: red
+      font-size: 12px
+      left: 3px
+  &.submitted
+    i
+      display: none
+  
+  svg
+    position: absolute
+    height: 10px
+    top: 7px
+
+    
+    path
+      fill: lighten($teal,10%)
+  .prefix__text
+    color: $yellow
+    position: absolute
+    font-size: 15px
+    left: 17px
+  input[type="text"]
+    @extend %consolas
+    color: white
+    background-color: transparent
+    border: 0
+    width: 100%
+    margin-left: 30px
+  i 
+    position: absolute
+    width: 1px
+    height: $top_height - 8
+    background-color: white
+    left: 31px
+    top: 5px
+    animation-name: blink
+    animation-duration: 800ms
+    animation-iteration-count: infinite
+    opacity: 1
+  
+  input:focus
+    outline-width: 0
+
+  input:focus + i
+    display: none
+  
+
+  @keyframes blink 
+    from 
+      opacity: 1 
+    to 
+      opacity: 0 
+  

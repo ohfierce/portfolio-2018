@@ -1,0 +1,49 @@
+@import '../../assets/sass/_component_includes'
+  
+@keyframes dropin
+	0%
+		opacity: 1		
+  33%
+    opacity: 0
+  66%
+    opacity: 0
+	100%
+		opacity: 1
+		
+@keyframes name-of-animation
+  0%
+    opacity: 1
+  33%
+    opacity: 0
+  66%
+    opacity: 0
+  100%
+    opacity: 1
+.section
+  &--grafental
+    &.active
+      .grafental
+
+.grafental
+  
+  &__mockup
+    position: absolute
+    left: 0
+    top: 50%
+    width: 70vw
+    transform: translateY(-50%)
+    &--first
+      z-index: 2
+      animation: name-of-animation 10s ease
+      animation-iteration-count: infinite
+    &--second
+      z-index: 1
+  &__content
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    right: 7.5vw
+    background-color: white
+    width: 25vw
+    border-radius: $balls
+    padding: 30px

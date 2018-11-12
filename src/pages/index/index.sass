@@ -1,0 +1,50 @@
+@import '../../assets/sass/_component_includes'
+@import '../../assets/sass/_component_includes'
+
+#menu
+  position: fixed
+  top: 50%
+  right: $balls_gutter*2
+  transform: translateY(-50%)
+  z-index: 999
+  list-style-type: none
+  li
+    margin-bottom: $balls_gutter*2.5
+    &.active
+      a
+        &:after 
+          opacity: 1
+    a
+      $_size: 8px
+      position: relative
+      width: $_size
+      height: $_size
+      border-radius: 50%
+      background-color: $white
+      content: ''
+      display: block
+      &:after 
+        transition: opacity .25s ease
+        display: block
+        content: ''
+        position: absolute
+        left: $_size/2
+        top: $_size/2
+        transform: translate(-50%,-50%)
+        width: $balls+2
+        height: $balls+2
+        background-color: transparent
+        border: 2px solid $white
+        border-radius: 50%
+        opacity: 0
+
+.section
+  position: relative
+  &--intro
+  &--grafental
+    background: linear-gradient(30deg, $dark-green, $yellow);
+
+  &--terminal
+    background: linear-gradient(-30deg, lighten($teal,20%), lighten(blue,30%));
+  &--stack
+    background: linear-gradient(30deg, lighten(rgba(red,0.5),25%), lighten(rgba($purple,.5),60%));

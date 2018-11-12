@@ -1,0 +1,77 @@
+@import '../../assets/sass/_component_includes'
+  
+$_border_radius: 5px
+
+@keyframes boing
+  0%
+    opacity: 0
+    bottom: -50%
+  100%
+    opacity: 1
+    bottom: 50%
+    
+
+.section
+  &--terminal
+    &.active
+      .terminal
+        animation: boing 1s 1 ease-out forwards
+.terminal
+  position: absolute
+  bottom: 50%
+  left: 50%
+  transform: translate(-50%,50%)
+  width: 50vw
+  min-width: 500px
+  +box-shadow(0,0,15px,rgba(black,.2))
+
+  @extend %consolas
+  font-size: 12px
+  &__top
+    line-height: $top_height
+    border-top-left-radius: $_border_radius
+    border-top-right-radius: $_border_radius
+    background: linear-gradient(0deg, #d8d8d8, #ececec);
+    text-align: center
+    position: relative
+  &__window
+    position: relative
+    line-height: $top_height
+    border-bottom-left-radius: $_border_radius
+    border-bottom-right-radius: $_border_radius
+    background: $purple
+    color: white
+    height: 45vh
+    min-height: 400px
+    padding: 3px
+    overflow: hidden
+    overflow-x: hidden
+    overflow-y: scroll
+  &__balls
+    position: absolute
+    
+  &__ball
+    position: absolute
+    top: ($top_height - $balls ) / 2
+    border-radius: 50%
+    width: $balls
+    height: $balls
+    box-sizing: border-box
+    border: 1px solid rgba(0,0,0,0.2)
+    transition: background-color .15s ease
+    &--left
+      background-color: lighten(red,15%)
+      left: $balls_gutter
+      &:hover
+        background-color: lighten(red,5%)
+    &--middle
+      left: $balls + $balls_gutter*2
+      background-color: orange
+      &:hover
+        background-color: darken(orange,5%)
+    &--right
+      left: 2*$balls + 3*$balls_gutter
+      background-color: lighten(green,10%)
+      &:hover
+        background-color: lighten(green,5%)
+    
